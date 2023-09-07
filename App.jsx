@@ -12,6 +12,7 @@ import {
 
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import {RNCamera} from 'react-native-camera';
+import ScannerMarker from './component/ScannerMarker';
 const App = () => {
   const [isFlash, setIsFlash] = useState(false);
   const onSuccess = event => {
@@ -57,6 +58,7 @@ const App = () => {
       <QRCodeScanner
         onRead={onSuccess}
         showMarker={true}
+        customMarker={<ScannerMarker/>}
         reactivate={true}
         cameraStyle={{height: '100%'}}
         reactivateTimeout={1000}
